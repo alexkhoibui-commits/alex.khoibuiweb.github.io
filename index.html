@@ -147,6 +147,34 @@
             margin-bottom: 1rem;
         }
 
+        /* Vùng hiển thị ảnh dự án */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Tối ưu hóa hiển thị ảnh trên điện thoại di động */
+        @media (max-width: 600px) {
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
         footer {
             background: var(--primary);
             color: white;
@@ -159,7 +187,8 @@
 <body>
 
     <header>
-        <h1>Alex.KhoiBui</h1> <nav>
+        <h1>Alex.KhoiBui</h1>
+        <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -173,16 +202,16 @@
         <h2>Bui Pham Minh Khoi (Alex)</h2>
         <h3>Aspiring Aerospace Engineer | High School Student</h3>
         <div class="quote">
-            <p>"Don't worry about many things at once. Start small, think big." - Steve Jobs [cite: 1]</p>
+            <p>"Don't worry about many things at once. Start small, think big." - Steve Jobs</p>
         </div>
     </section>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="card">
-            <p>I am a student at Le Hong Phong High School for the Gifted, a prestigious school known for its strong academic tradition[cite: 10]. In grade 10, I earned a GPA of 9.46 [cite: 11], and with consistent effort and clear direction, I am actively working toward a GPA of 9.6 in grade 11[cite: 16].</p>
+            <p>I am a student at Le Hong Phong High School for the Gifted, a prestigious school known for its strong academic tradition. In grade 10, I earned a GPA of 9.46, and with consistent effort and clear direction, I am actively working toward a GPA of 9.6 in grade 11.</p>
             <br>
-            <p>To enhance my performance, I utilize modern tools like Notebook LM to summarize and visualize knowledge[cite: 13]. I also practice strict time management techniques, including the Eisenhower Matrix and Pomodoro method, to maintain a healthy balance between my rigorous academic schedule and physical activities[cite: 14].</p>
+            <p>To enhance my performance, I utilize modern tools like Notebook LM to summarize and visualize knowledge. I also practice strict time management techniques, including the Eisenhower Matrix and Pomodoro method, to maintain a healthy balance between my rigorous academic schedule and physical activities.</p>
         </div>
     </section>
 
@@ -192,12 +221,18 @@
             <div class="card">
                 <span class="tag">Aerospace Engineering</span>
                 <h3>My Journey Toward the Sky</h3>
-                <p>My biggest dream is to study aerospace engineering at a university in the United States[cite: 44]. I am currently learning how to build and control drones at UTE University[cite: 46]. Every hour spent with circuits, motors, and flight controllers helps me build the foundation of my future in the science of flight[cite: 47, 48]. Balancing this passion with a demanding high school workload is challenging, but every mistake and success brings me closer to my goal[cite: 50, 53].</p>
+                <p>My biggest dream is to study aerospace engineering at a university in the United States. I am currently learning how to build and control drones at UTE University. Every hour spent with circuits, motors, and flight controllers helps me build the foundation of my future in the science of flight. Balancing this passion with a demanding high school workload is challenging, but every mistake and success brings me closer to my goal.</p>
+                
+                <!-- Khu vực hiển thị ảnh mới được thêm vào dưới đây -->
+                <div class="project-gallery">
+                    <img src="Unnamed 6.jpg" alt="Drone Development Photo 1">
+                    <img src="Unnamed 7.jpg" alt="Drone Development Photo 2">
+                </div>
             </div>
             <div class="card">
                 <span class="tag">Technology & AI</span>
                 <h3>Drones and AI: Drowning Prevention</h3>
-                <p>In Vietnam, unusual whirlpools and deep pools at beaches can lead to tragic drowning accidents[cite: 34, 35]. To solve this, I am researching how drones and Artificial Intelligence can increase visibility for lifeguards and process live video to detect signs of drowning[cite: 39, 40]. This combination could reduce response times and save lives, allowing pupils to relax safely during summer breaks[cite: 42, 43].</p>
+                <p>In Vietnam, unusual whirlpools and deep pools at beaches can lead to tragic drowning accidents. To solve this, I am researching how drones and Artificial Intelligence can increase visibility for lifeguards and process live video to detect signs of drowning. This combination could reduce response times and save lives, allowing pupils to relax safely during summer breaks.</p>
             </div>
         </div>
     </section>
@@ -211,7 +246,7 @@
             </div>
             <div class="card">
                 <h3>Community Service</h3>
-                <p>Despite my busy schedule, I contribute to the "love kitchen" at Cho Ray Hospital by giving out instant noodles, soap, paper towels, and rice[cite: 3]. Knowing that most patients are seriously ill and face heavy financial burdens [cite: 4], I hope my small acts of kindness show them that society has not forgotten them during their hardships[cite: 7, 8].</p>
+                <p>Despite my busy schedule, I contribute to the "love kitchen" at Cho Ray Hospital by giving out instant noodles, soap, paper towels, and rice. Knowing that most patients are seriously ill and face heavy financial burdens, I hope my small acts of kindness show them that society has not forgotten them during their hardships.</p>
             </div>
         </div>
     </section>
@@ -221,17 +256,18 @@
         <div class="grid">
             <div class="card">
                 <h3>Taekwondo</h3>
-                <p>Through years of dedication and discipline, I have achieved the rank of third-dan black belt in Taekwondo[cite: 2]. This foundation has taught me to deliver high, fast, and powerful kicks[cite: 22].</p>
+                <p>Through years of dedication and discipline, I have achieved the rank of third-dan black belt in Taekwondo. This foundation has taught me to deliver high, fast, and powerful kicks.</p>
             </div>
             <div class="card">
                 <h3>Muay Thai</h3>
-                <p>To become a more complete martial artist, I began training in Muay Thai at the school of Nguyen Tran Duy Nhat, a world champion[cite: 19, 20]. Muay Thai teaches highly practical close-range combat and self-defense using elbows, knees, punches, and clinches[cite: 22, 23]. Training alongside professional fighters motivates me to push my physical and mental limits[cite: 29].</p>
+                <p>To become a more complete martial artist, I began training in Muay Thai at the school of Nguyen Tran Duy Nhat, a world champion. Muay Thai teaches highly practical close-range combat and self-defense using elbows, knees, punches, and clinches. Training alongside professional fighters motivates me to push my physical and mental limits.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Bui Pham Minh Khoi (Alex). Built with passion and determination.</p>
+        <p>&copy; 2024 - 2026 Bui Pham Minh Khoi (Alex). All rights reserved.</p>
+        <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 0.5rem;">Website established: October 2024 | Last updated: June 2026</p>
     </footer>
 
 </body>
